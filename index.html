@@ -1,60 +1,84 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
 
-    <!-- 스마트폰 화면 대응 -->
+    <!-- 모바일 화면 대응 -->
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+          content="width=device-width, initial-scale=1.0">
 
     <title>먼가 힐링이 필요한 녀석들</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
 <div class="app">
 
-    <!-- =========================
+
+    <!-- ========================================
          1. 시작 화면
-    ========================== -->
+    ========================================= -->
+
     <section class="screen active" id="intro">
+        <!-- 제목 이미지 -->
 
-        <div class="decoration">☁️ ✦ ☁️</div>
+        <div class="title-image-wrap">
 
-        <div class="character-placeholder">
-            ♡
+            <img
+                    src="../out/production/jhdy/images/title.png"
+                    alt="먼가 힐링이 필요한 녀석들"
+                    class="title-image"
+            >
+
         </div>
 
-        <h1>
-            먼가 힐링이 필요한<br>
-            녀석들
-        </h1>
 
-        <p class="intro-text">
-            요즘 우리 둘 다<br>
-            너무 열심히 산 것 같지 않아?
-            <br><br>
-            이제 좀 쉬러 가자 🌿
-        </p>
 
-        <button class="main-button"
-                onclick="goToScreen('healing-choice')">
+
+        <!-- 치이카와 이미지 -->
+
+        <div class="character-placeholder">
+
+            <img
+                    src="../out/production/jhdy/images/happychi.png"
+                    alt="치이카와"
+                    class="character-image"
+            >
+
+        </div>
+
+
+        <!-- 제목 이미지 -->
+
+
+        <button
+                class="main-button"
+                onclick="goToScreen('healing-choice')"
+        >
+
             힐링하러 가기 ♡
+
         </button>
 
+
         <div class="bottom-decoration">
+
             ⋆｡˚ ✦ ˚｡⋆
+
         </div>
 
     </section>
 
 
 
-    <!-- =========================
-         2. 힐링 종류 선택
-    ========================== -->
+    <!-- ========================================
+       2. 힐링 종류 선택
+  ========================================= -->
+
     <section class="screen" id="healing-choice">
 
         <div class="progress">
@@ -77,387 +101,727 @@
         </p>
 
 
-        <button class="choice-card blue"
-                onclick="goToScreen('japan-choice')">
+        <!-- 해외여행 -->
+        <button
+                class="choice-card blue"
+                onclick="goToScreen('japan-choice')"
+        >
 
             <div class="choice-icon">
-                ✈️
+                <img
+                        src="../out/production/jhdy/images/hachiware.png"
+                        alt="하치와레"
+                        class="choice-character"
+                >
             </div>
 
             <div>
                 <h3>해외여행</h3>
-                <p>잠깐 일본으로 도망가기</p>
+
+                <p>
+                    일본으로 1박 2일!
+                </p>
             </div>
 
-            <span class="arrow">›</span>
+            <span class="arrow">
+            ›
+        </span>
+
         </button>
 
 
-        <button class="choice-card yellow"
-                onclick="goToScreen('korea-choice')">
+        <!-- 국내여행 -->
+        <button
+                class="choice-card yellow"
+                onclick="goToScreen('korea-choice')"
+        >
 
             <div class="choice-icon">
-                🚗
+                <img
+                        src="../out/production/jhdy/images/usagi.png"
+                        alt="우사기"
+                        class="choice-character"
+                >
             </div>
 
             <div>
                 <h3>국내여행</h3>
-                <p>가까운 곳에서 푹 쉬기</p>
+
+                <p>
+                    국내여행과 호캉스!
+                </p>
             </div>
 
-            <span class="arrow">›</span>
+            <span class="arrow">
+            ›
+        </span>
+
         </button>
 
 
-        <button class="choice-card pink"
-                onclick="showNope()">
+        <!-- 흥 너랑 안가 -->
+        <button
+                class="choice-card pink"
+                onclick="showNope()"
+        >
 
             <div class="choice-icon">
-                😤
+                <img
+                        src="../out/production/jhdy/images/chiikawa.png"
+                        alt="치이카와"
+                        class="choice-character"
+                >
             </div>
 
             <div>
                 <h3>흥 너랑 안가</h3>
-                <p>일단 눌러보시든가요</p>
+
+                <p>
+                    눌러보시든가요
+                </p>
             </div>
 
-            <span class="arrow">›</span>
+            <span class="arrow">
+            ›
+        </span>
+
         </button>
 
     </section>
 
 
 
-    <!-- =========================
-         3. 너랑 안가
-    ========================== -->
+    <!-- ========================================
+         3. 안 간다고 눌렀을 때
+    ========================================= -->
+
     <section class="screen" id="nope-screen">
 
-        <div class="error-icon">
-            😑
+
+        <div class="error-image-wrap">
+            <img
+                    src="../out/production/jhdy/images/sadchi2.jpg"
+                    alt="슬퍼하는 치이카와"
+                    class="error-image"
+            >
         </div>
 
         <p class="small-title">
+
             ERROR
+
         </p>
 
+
         <h2>
-            그런 선택지는<br>
-            없습니다.
+
+            참내 이걸 눌러?!<br>
+
+
         </h2>
+
 
         <p class="description big-space">
-            잘못 누른 것 같은데요?
+
+            흥 너무해
+
             <br>
-            다시 골라주세요.
+
+            잘못 누른거지?!
             <br><br>
-            힐링은 같이 가는 겁니다.
+
+            다시 골라!!!!!!
+
         </p>
 
-        <button class="main-button pink-button"
-                onclick="goToScreen('healing-choice')">
+
+        <button
+                class="main-button pink-button"
+                onclick="goToScreen('healing-choice')"
+        >
+
             다시 고르기 😤
+
         </button>
+
 
     </section>
 
 
 
-    <!-- =========================
-         4. 일본 선택
-    ========================== -->
+    <!-- ========================================
+         4. 일본 여행
+    ========================================= -->
+
     <section class="screen" id="japan-choice">
 
-        <button class="back-button"
-                onclick="goToScreen('healing-choice')">
+
+        <button
+                class="back-button"
+                onclick="goToScreen('healing-choice')"
+        >
+
             ‹ 이전
+
         </button>
 
+
         <div class="progress">
+
             <span></span>
+
             <span class="active"></span>
+
             <span></span>
+
         </div>
 
+
         <p class="small-title">
-            JAPAN 🇯🇵
+
+            QUESTION 02
+
         </p>
 
+
         <h2>
+
             일본 어디로<br>
-            도망갈까?
+            놀러갈까?
+
         </h2>
 
-        <p class="description">
-            1박 2일 짧고 알차게!
-        </p>
-
-
-        <button class="travel-card"
-                onclick="selectTrip('fukuoka')">
-
-            <div class="travel-emoji">
-                🐰
-            </div>
-
-            <div class="travel-info">
-                <span class="tag">추천</span>
-
-                <h3>후쿠오카</h3>
-
-                <p>
-                    치이카와 굿즈도 사고<br>
-                    맛있는 것도 잔뜩 먹자
-                </p>
-
-                <div class="keywords">
-                    <span>치이카와</span>
-                    <span>맛집</span>
-                    <span>여유</span>
-                </div>
-            </div>
-
-            <span class="arrow">›</span>
-
-        </button>
-
-
-        <button class="travel-card"
-                onclick="selectTrip('osaka')">
-
-            <div class="travel-emoji">
-                🛍️
-            </div>
-
-            <div class="travel-info">
-
-                <h3>오사카</h3>
-
-                <p>
-                    치이카와 제대로 털고<br>
-                    먹고 놀고 쇼핑까지!
-                </p>
-
-                <div class="keywords">
-                    <span>쇼핑</span>
-                    <span>먹방</span>
-                    <span>놀거리</span>
-                </div>
-
-            </div>
-
-            <span class="arrow">›</span>
-
-        </button>
-
-    </section>
-
-
-
-    <!-- =========================
-         5. 국내 선택
-    ========================== -->
-    <section class="screen" id="korea-choice">
-
-        <button class="back-button"
-                onclick="goToScreen('healing-choice')">
-            ‹ 이전
-        </button>
-
-        <div class="progress">
-            <span></span>
-            <span class="active"></span>
-            <span></span>
-        </div>
-
-        <p class="small-title">
-            KOREA 🇰🇷
-        </p>
-
-        <h2>
-            국내에서는<br>
-            어디로 갈까?
-        </h2>
 
         <p class="description">
-            우리한테 필요한 힐링을 골라봐
+
+            1박 2일동안 놀다오기~
+
         </p>
 
 
-        <button class="travel-card"
-                onclick="selectTrip('busan')">
+
+        <!-- 후쿠오카 -->
+
+        <button
+                class="travel-card"
+                onclick="selectTrip('fukuoka')"
+        >
 
             <div class="travel-emoji">
-                🌊
+                <img
+                        src="../out/production/jhdy/images/1.png"
+                        alt="후쿠오카"
+                        class="travel-character"
+                >
             </div>
 
+
             <div class="travel-info">
+
 
                 <span class="tag">
-                    호캉스
+
+                    추천
+
                 </span>
 
-                <h3>부산</h3>
+
+                <h3>
+
+                    후쿠오카
+
+                </h3>
+
 
                 <p>
-                    좋은 호텔에서<br>
-                    아무것도 안 하고 푹 쉬기
+
+                    치이카와 랜드는 없지만 키디랜드에 치이카와 구역 존재! <br>
+                    후쿠오카 텐진에  치이카와 POP UP STORE가 열려요✨ <br>
+
+                    📅 2026.10.16(금) ~ 11.3(화·공휴일) <br>
+                    ⏰ 10:00~19:00<br>
+                    <br>
+                    비교적 가까워 짧은 비행, 1박 2일로 가장 추천?!
+
+
                 </p>
 
+
                 <div class="keywords">
-                    <span>호텔</span>
-                    <span>바다</span>
-                    <span>휴식</span>
+
+                    <span>키디 랜드</span>
+
+                    <span>가까운 거리</span>
+
+
                 </div>
+
 
             </div>
 
-            <span class="arrow">›</span>
+
+            <span class="arrow">
+
+                ›
+
+            </span>
+
+
         </button>
 
 
 
-        <button class="travel-card"
-                onclick="selectTrip('gangneung')">
+        <!-- 오사카 -->
+
+        <button
+                class="travel-card"
+                onclick="selectTrip('osaka')"
+        >
 
             <div class="travel-emoji">
-                ☕
+                <img
+                        src="../out/production/jhdy/images/2.png"
+                        alt="오사카"
+                        class="travel-character"
+                >
             </div>
+
 
             <div class="travel-info">
 
-                <h3>강릉</h3>
+
+                <h3>
+
+                    오사카
+
+                </h3>
+
 
                 <p>
-                    바다 보고 카페 가고<br>
-                    천천히 돌아다니기
+
+                    좀 더 많은?? 치이카와 굿즈
+
+                    <br>
+                    볼게 생각보다 더 많아 1박2일은 아쉬울수도??
+
                 </p>
 
-                <div class="keywords">
-                    <span>바다</span>
-                    <span>카페</span>
-                    <span>감성</span>
-                </div>
-
-            </div>
-
-            <span class="arrow">›</span>
-        </button>
-
-
-
-        <button class="travel-card"
-                onclick="selectTrip('gyeongju')">
-
-            <div class="travel-emoji">
-                🌙
-            </div>
-
-            <div class="travel-info">
-
-                <h3>경주</h3>
-
-                <p>
-                    예쁜 야경 보면서<br>
-                    조용히 산책하기
-                </p>
 
                 <div class="keywords">
-                    <span>야경</span>
-                    <span>산책</span>
-                    <span>한옥</span>
+
+                    <span>치이카와 랜드</span>
+
+
+                    <span>더 많은 볼거리</span>
+                    <span>더 비싸고 먼 비행</span>
+
                 </div>
+
 
             </div>
 
-            <span class="arrow">›</span>
+
+            <span class="arrow">
+
+                ›
+
+            </span>
+
+
         </button>
+
 
     </section>
 
 
 
-    <!-- =========================
-         6. 일정 화면
-    ========================== -->
-    <section class="screen" id="schedule-screen">
+    <!-- ========================================
+         5. 국내 여행
+    ========================================= -->
 
-        <button class="back-button"
-                onclick="backToTravelChoice()">
+    <section class="screen" id="korea-choice">
+
+
+        <button
+                class="back-button"
+                onclick="goToScreen('healing-choice')"
+        >
+
             ‹ 이전
+
         </button>
 
+
         <div class="progress">
+
             <span></span>
-            <span></span>
+
             <span class="active"></span>
+
+            <span></span>
+
         </div>
+
 
         <p class="small-title">
-            PLAN ♡
+
+            QUESTION 02
+
         </p>
 
-        <div class="result-icon"
-             id="result-icon">
-            ✈️
-        </div>
 
-        <h2 id="trip-title">
-            후쿠오카
+        <h2>
+
+            국내에서는<br>
+            어디로 갈까?
+
         </h2>
 
-        <p class="description"
-           id="trip-subtitle">
-            짧고 알차게 놀고 오기
+
+        <p class="description">
+
+            어디든 다 조아 ㅎㅎ
+
         </p>
+
+
+
+        <!-- 부산 -->
+
+        <button
+                class="travel-card"
+                onclick="selectTrip('busan')"
+        >
+
+            <div class="travel-emoji">
+                <img
+                        src="../out/production/jhdy/images/3.png"
+                        alt="부산"
+                        class="travel-character"
+                >
+            </div>
+
+            <div class="travel-info">
+
+
+                <span class="tag">
+
+                    호캉스(파라다이스 호텔?!)<br>
+                    (내가 젤 조아하는 호캉스...ㅎ)
+
+                </span>
+
+
+                <h3>
+
+                    부산
+
+                </h3>
+
+
+                <p>
+
+                    좋은 호텔에서
+
+                    <br>
+
+                    푹 쉬고 맛난거 먹고 놀기!<br>
+                    (나는 호텔 밖을 안나가두 돼..ㅎ)
+
+                </p>
+
+
+                <div class="keywords">
+
+                    <span>호텔</span>
+
+                    <span>바다</span>
+
+                    <span>호캉스</span>
+
+                    <span>맛집</span>
+
+                </div>
+
+
+            </div>
+
+
+            <span class="arrow">
+
+                ›
+
+            </span>
+
+
+        </button>
+
+
+
+        <!-- 강릉 -->
+
+        <button
+                class="travel-card"
+                onclick="selectTrip('gangneung')"
+        >
+
+            <div class="travel-emoji">
+                <img
+                        src="../out/production/jhdy/images/4.png"
+                        alt="강릉"
+                        class="travel-character"
+                >
+            </div>
+
+            <div class="travel-info">
+
+
+                <h3>
+
+                    강릉
+
+                </h3>
+
+
+                <p>
+
+                   지난번에 못간 여행
+
+                    <br>
+
+                    차타고 맛집 탐방과 바다뷰 숙소?!
+
+                </p>
+
+
+                <div class="keywords">
+
+                    <span>바다</span>
+
+                    <span>길감자♥</span>
+
+                    <span>맛집</span>
+
+                </div>
+
+
+            </div>
+
+
+            <span class="arrow">
+
+                ›
+
+            </span>
+
+
+        </button>
+
+
+
+        <!-- 경주 -->
+
+        <button
+                class="travel-card"
+                onclick="selectTrip('gyeongju')"
+        >
+
+            <div class="travel-emoji">
+                <img
+                        src="../out/production/jhdy/images/5.png"
+                        alt="경주"
+                        class="travel-character"
+                >
+            </div>
+
+            <div class="travel-info">
+
+
+                <h3>
+
+                    경주
+
+                </h3>
+
+
+                <p>
+
+                    나 빼고간 그곳
+
+                    <br>
+
+                    동궁과월지 야경 보러가기!
+
+                </p>
+
+
+                <div class="keywords">
+
+                    <span>야경</span>
+
+                    <span>나 빼고감 </span>
+
+                    <span>한옥</span>
+
+                </div>
+
+
+            </div>
+
+
+            <span class="arrow">
+
+                ›
+
+            </span>
+
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         6. 여행 일정
+    ========================================= -->
+
+    <section class="screen" id="schedule-screen">
+
+
+        <button
+                class="back-button"
+                onclick="backToTravelChoice()"
+        >
+
+            ‹ 이전
+
+        </button>
+
+
+        <div class="progress">
+
+            <span></span>
+
+            <span></span>
+
+            <span class="active"></span>
+
+        </div>
+
+
+        <p class="small-title">
+
+            PLAN ♡
+
+        </p>
+
+
+        <div class="result-icon">
+            <img
+                    id="result-image"
+                    class="result-image"
+                    src=""
+                    alt="선택한 여행지"
+            >
+        </div>
+
+
+        <h2 id="trip-title">
+
+            후쿠오카
+
+        </h2>
+
+
+        <p
+                class="description"
+                id="trip-subtitle"
+        >
+
+            짧고 알차게 놀고 오기
+
+        </p>
+
 
 
         <div class="schedule">
 
+
+            <!-- DAY 1 -->
+
             <div class="day-card">
 
+
                 <div class="day-title">
+
                     DAY 1
+
                 </div>
+
 
                 <div id="day1">
+
                 </div>
+
 
             </div>
 
+
+
+            <!-- DAY 2 -->
 
             <div class="day-card">
 
+
                 <div class="day-title">
+
                     DAY 2
+
                 </div>
+
 
                 <div id="day2">
+
                 </div>
 
+
             </div>
+
 
         </div>
 
 
-        <button class="main-button"
-                onclick="goToFinal()">
+
+        <button
+                class="main-button"
+                onclick="goToFinal()"
+        >
+
             여기로 갈래! ♡
+
         </button>
 
 
-        <button class="text-button"
-                onclick="backToTravelChoice()">
+        <button
+                class="text-button"
+                onclick="backToTravelChoice()"
+        >
+
             다른 곳도 볼래
+
         </button>
+
 
     </section>
 
 
 
-    <!-- =========================
-         7. 최종 결과
-    ========================== -->
+    <!-- ========================================
+     7. 최종 결과
+========================================= -->
+
     <section class="screen" id="final-screen">
 
         <div class="final-decoration">
@@ -469,15 +833,19 @@
         </p>
 
         <h2>
-            다요니의 선택은...
+            다요니의 선택 완료!
         </h2>
 
 
-        <div class="final-card">
+        <div class="final-card" id="capture-card">
 
-            <div class="final-icon"
-                 id="final-icon">
-                🐰
+            <div class="final-icon">
+                <img
+                        id="final-image"
+                        class="final-image"
+                        src=""
+                        alt="선택한 여행지"
+                >
             </div>
 
             <h3 id="final-title">
@@ -485,7 +853,7 @@
             </h3>
 
             <p id="final-description">
-                치이카와 + 맛있는 거 + 여유
+                치이카와 · 맛집 · 여유
             </p>
 
             <div class="heart-line">
@@ -493,30 +861,50 @@
             </div>
 
             <p class="final-message">
-                그럼 여기로 도망가자!
-                <br><br>
-                나머지는 내가 알아볼게 😎
+                우리 여기로 놀러가자 ♡
+            </p>
+
+            <p class="choice-stamp">
+                다여니의 선택!!!
             </p>
 
         </div>
 
 
-        <button class="main-button"
-                onclick="restart()">
-            처음부터 다시 보기
+        <button
+                class="share-button"
+                onclick="shareResult()"
+        >
+            결과 보내기
         </button>
 
 
-        <p class="ending">
-            지친 녀석들의 힐링계획 완료 🌿
-        </p>
+        <button
+                class="save-button"
+                onclick="saveResultImage()"
+        >
+            결과 카드 저장하기
+        </button>
+
+
+        <button
+                class="restart-button"
+                onclick="restart()"
+        >
+            처음부터 다시 고르기
+        </button>
+
+
 
     </section>
 
+
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
